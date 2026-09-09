@@ -8,7 +8,11 @@ def buscar_autor(autor_id):
     return Autor.query.get(autor_id)
 
 def criar_autor(data):
-    autor = Autor(nome=data["nome"], nacionalidade=data["nacionalidade"])
+    autor = Autor(
+        nome=data["nome"], 
+        nacionalidade=data["nacionalidade"]
+    )
+    
     db.session.add(autor)
     db.session.commit()
     return autor

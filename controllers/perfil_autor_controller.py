@@ -5,7 +5,7 @@ from models.perfil_autor import PerfilAutor
 def buscar_perfil(perfil_id):
     return PerfilAutor.query.get(perfil_id)
 
-def criar_autor(data):
+def criar_perfil(data):
     autor = Autor.query.get(data.get("autor_id"))
     if autor is None:
         return None, "Autor não encontrado"
