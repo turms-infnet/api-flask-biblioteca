@@ -20,3 +20,9 @@ def index():
     return jsonify({
         'status': 'API Rodando...'
     })
+
+from views import autor_view
+from views import categoria_view
+from views import livro_view
+from views import perfil_autor_view
+# from views import docs_view
