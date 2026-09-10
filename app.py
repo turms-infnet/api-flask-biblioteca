@@ -1,9 +1,19 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from flask import Flask, jsonify
-from config import Config
+from config import Config, config
 from models import db
 
+load_dotenv()
+
+environment = os.environ.get('FLASK_ENV', 'default')
+ConfigClas: Config = config[environment]
+
 app = Flask(__name__)
-app.config.from_object(Config)
+app.config.from_object(ConfigClas)
 
 db.init_app(app)
 
